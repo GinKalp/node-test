@@ -1,7 +1,11 @@
 const {dbAction} = require("../helpers/requestHelper");
 module.exports = {
-    addNewAccount: async (data) =>{
-        const {groupid, userid} = data
+    isUserInGroup: async (groupid, userid) =>{
+        const sql = `SELECT * FROM accounts AS a
+                        WHERE a.group_id = ? AND a.user_id = ?`
+        return await dbAction(sql, [groupid, userid])
+    },
+    addNewAccount: async (groupid, userid) =>{
         const sql = `INSERT INTO accounts(group_id, user_id)
                         VALUES(?,?)`
         return await dbAction(sql, [groupid, userid])

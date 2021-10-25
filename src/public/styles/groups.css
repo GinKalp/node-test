@@ -1,0 +1,28 @@
+.card-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    margin: 10px 10%;
+}
+.card{
+    border: 1px solid black;
+    width: 170px;
+    margin: 20px;
+}
+.card > h2{
+    margin-bottom: 2px;
+}
+.card > p{
+    margin-top: 2px;
+    color: grey;
+}
+h3{
+    text-align: center;
+    margin-top: 70px;
+}
+h5{
+    margin: 0;
+}
+button{
+    margin-top: 10px;
+}
