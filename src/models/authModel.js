@@ -9,5 +9,10 @@ module.exports = {
 
         const hashedPass = hashValue(password)
         return await dbAction(sql, [name, email, hashedPass])
+    },
+    loginUser: async (email) =>{
+        const sql = `SELECT * FROM users WHERE email = ?`
+        return await dbAction(sql,  [email])
+
     }
 }
