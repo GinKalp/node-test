@@ -28,7 +28,7 @@ module.exports = {
 
         if (!verifyHash(password, loginData.result.password)){
 
-            return dbFail(res, "Passwords don't match.", 400)
+            return dbFail(res, "Incorrect email or password", 400)
         }
         const userToBeEncrypted = {
             email: loginData.result.email,

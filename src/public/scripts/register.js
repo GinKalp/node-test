@@ -31,5 +31,5 @@ registerForm.addEventListener('submit', async (e) =>{
     if (Array.isArray(data.error)) return showError(data.error, errors, false)
     if (data.error) return showError(data.error, errors, true)
     alert(data.msg)
-    // window.location = 'login.html'
+    window.location = 'login.html'
 })
