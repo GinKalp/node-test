@@ -8,6 +8,10 @@
     border: 1px solid black;
     width: 170px;
     margin: 20px;
+    cursor: pointer;
+}
+.card > *{
+    pointer-events: none;
 }
 .card > h2{
     margin-bottom: 2px;
