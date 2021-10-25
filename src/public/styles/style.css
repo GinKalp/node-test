@@ -1,0 +1,21 @@
+body{
+    margin-top: 200px;
+}
+.container{
+    max-width: 1000px;
+    margin: 20px 30%;
+}
+nav{
+     text-align: center;
+}
+nav > img{
+    width: 80px;
+}
+a{
+    text-decoration: none;
+    text-underline: none;
+    color: unset;
+}
+a:hover{
+    color: dodgerblue;
+}
