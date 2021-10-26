@@ -1,22 +1,17 @@
 const {registerUser, loginUser} = require("../models/authModel");
-// helpers for testing purposes
 const {dbFail, dbSuccess} = require("../helpers/requestHelper");
 const {verifyHash} = require("../helpers/hashHelper");
 const jwt = require('jsonwebtoken')
 
 module.exports = {
     register: async (req, res) =>{
+        // made email unique in database
         const registerData = await registerUser(req.body)
         console.log(registerData)
 
         if (!registerData.isSuccess) return dbFail(res, registerData.error)
 
         dbSuccess(res, "User registered.")
-        // const data = {
-        //     title: 'Register',
-        //     registerData
-        // }
-        // res.render('index', data);
     },
     login: async (req, res) =>{
         const { email, password } = req.body

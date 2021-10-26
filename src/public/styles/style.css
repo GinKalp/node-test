@@ -44,3 +44,9 @@ button{
 button:hover{
     background-color: #eaeaea;
 }
+.errors{
+    background-color: darkred;
+    color: white;
+    text-align: center;
+    border-radius: 0.25rem;
+}
