@@ -23,12 +23,20 @@ async function getUsersGroups(){
     return data.data
 }
 function appendGroups(data){
-    data.map(item =>{
-        mainContainer.innerHTML += `<div data-id="${item.group_id}" class="card">
+    if (Array.isArray(data)){
+        data.map(item =>{
+            mainContainer.innerHTML += `<div data-id="${item.group_id}" class="card">
                                         <h2>ID: ${item.group_id}</h2>
                                         <p>${item.group_name}</p>
                                     </div>`
-    })
+        })
+    } else {
+        mainContainer.innerHTML += `<div data-id="${data.group_id}" class="card">
+                                        <h2>ID: ${data.group_id}</h2>
+                                        <p>${data.group_name}</p>
+                                    </div>`
+    }
+
 }
 addBtn.onclick = async () =>{
     const group = {

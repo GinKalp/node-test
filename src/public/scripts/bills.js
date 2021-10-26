@@ -17,13 +17,23 @@ async function getBills(groupId){
     return data.data
 }
 function appendData(data){
-    data.map(item =>{
-        tbody.innerHTML += `<tr>
+    if (!data) return
+    if (Array.isArray(data)){
+        data.map(item =>{
+            tbody.innerHTML += `<tr>
                                 <td>${item.id}</td>
                                 <td>${item.description}</td>
                                 <td>$${item.amount}</td>
                             </tr>`
-    })
+        })
+    } else {
+        tbody.innerHTML += `<tr>
+                                <td>${data.id}</td>
+                                <td>${data.description}</td>
+                                <td>$${data.amount}</td>
+                            </tr>`
+    }
+
 }
 
 addBtn.onclick = async () =>{
@@ -45,4 +55,5 @@ addBtn.onclick = async () =>{
     console.log(data)
     if (data.error) alert(data.error)
     if (!data.error) alert(data.msg)
+    window.location.reload()
 }

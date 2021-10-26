@@ -5,6 +5,7 @@ module.exports = {
         const {id} = req.params
         const bills = await billsById(id)
         if (!bills.isSuccess) return dbFail(res, 'Error getting bills')
+        if (!bills.result) return dbFail(res, 'No bills found.', 404)
         dbSuccess(res, 'Got bills', bills.result)
     },
     postBill: async (req, res) =>{
